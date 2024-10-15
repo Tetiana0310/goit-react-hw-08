@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    color: #000000;
+    padding: 12px 16px;
+    font-size: 18px;
+}
+
+.contactList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactText {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgb(197, 193, 193);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
