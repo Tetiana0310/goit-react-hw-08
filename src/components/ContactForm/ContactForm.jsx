@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { addContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
 
-export default function ContactForm({ onAddBtn }) {
+export default function ContactForm() {
   const nameId = useId();
   const phoneId = useId();
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export default function ContactForm({ onAddBtn }) {
     }),
   });
 
-  const handleSubmite = (values, actions) => {
+  const handleSubmit = (values, actions) => {
     const newContact = {
       id: nanoid(),
       name: values.name,
@@ -40,7 +40,7 @@ export default function ContactForm({ onAddBtn }) {
     <Formik
       initialValues={initialValues}
       validationSchema={FeedbackSchema}
-      onSubmit={handleSubmite}>
+      onSubmit={handleSubmit}>
       <Form className={css.container}>
         <label className={css.label} htmlFor={nameId}>
           Name
