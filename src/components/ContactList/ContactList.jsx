@@ -8,7 +8,9 @@ export default function ContactList() {
   const reduxContacts = useSelector(selectContacts);
   const searchStr = useSelector(selectContactFilter);
 
-  const findedContacts = reduxContacts.filter((contact) =>
+  const contacts = Array.isArray(reduxContacts) ? reduxContacts : [];
+
+  const findedContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(searchStr.toLowerCase())
   );
 
