@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 import css from "../ContactForm/ContactForm.module.css";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/contactsOps";
 
 export default function ContactForm() {
   const nameId = useId();
