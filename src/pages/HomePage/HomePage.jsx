@@ -10,7 +10,7 @@ const HomePage = () => {
     <div className={css.container}>
       {user ? (
         <div className={css.LogIn}>
-          <h1>Welcome, {user.name || user.email}!</h1>
+          <h1>Welcome {user.name || user.email}!</h1>
         </div>
       ) : (
         <div className={css.notLogIn}>
