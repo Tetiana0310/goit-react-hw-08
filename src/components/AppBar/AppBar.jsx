@@ -13,6 +13,7 @@ const AppBar = () => {
 
   console.log("isLoggedIn:", isLoggedIn);
   console.log("user:", user);
+
   return (
     <header className={css.header}>
       <Navigation />
@@ -20,7 +21,7 @@ const AppBar = () => {
         {isLoggedIn ? (
           <>
             <span className={css.welcome}>
-              Welcome, {user.name || user.email}!
+              Welcome, {user && (user.name || user.email)}!
             </span>
             <UserMenu />
           </>
