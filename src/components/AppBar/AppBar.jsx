@@ -1,20 +1,23 @@
 import React from "react";
-import css from "./AppBar.module.css";
-import Navigation from "../Navigation/Navigation";
-import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import { useSelector } from "react-redux";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
+import Navigation from "../Navigation/Navigation";
 import UserMenu from "../UserMenu/UserMenu";
 import AuthNav from "../AuthNav/AuthNav";
+import css from "./AppBar.module.css";
 
 const AppBar = () => {
-  const username = useSelector(selectUser);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const user = useSelector(selectUser);
   return (
     <header className={css.header}>
       <Navigation />
       <div className={css.wrapper}>
-        {selectIsLoggedIn ? (
+        {isLoggedIn ? (
           <>
-            <span className={css.welcome}>Welcome, {username}!</span>
+            <span className={css.welcome}>
+              Welcome, {user.name || user.email}!
+            </span>
             <UserMenu />
           </>
         ) : (
