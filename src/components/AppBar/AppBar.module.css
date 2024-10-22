@@ -1,1 +1,19 @@
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e88e5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.welcome {
+    font-size: 18px;
+    color: #ffffff;
+}
