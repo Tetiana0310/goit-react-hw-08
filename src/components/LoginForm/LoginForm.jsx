@@ -2,9 +2,10 @@ import React from "react";
 import css from "./LoginForm.module.css";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../redux/auth/operations";
 
-const LoginForm = ({ onSubmit }) => {
-  console.log("Rendering LoginForm");
+const LoginForm = () => {
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
@@ -18,7 +19,12 @@ const LoginForm = ({ onSubmit }) => {
     email: "",
     password: "",
   };
+  const dispatch = useDispatch();
 
+  const onSubmit = (values) => {
+    dispatch(logIn(values));
+  };
+  
   return (
     <Formik
       initialValues={initialValues}

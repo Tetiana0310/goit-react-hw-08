@@ -13,9 +13,10 @@ const ContactsPage = () => {
 
   return (
     <section>
-      <ContactList />
+      
       <ContactForm />
       <SearchBox />
+      <ContactList />
     </section>
   );
 };

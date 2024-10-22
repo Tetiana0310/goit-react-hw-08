@@ -4,7 +4,6 @@ import { logIn } from "../../redux/auth/operations";
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
-  console.log("Rendering LoginPage");
   const dispatch = useDispatch();
 
   const handleLogin = (values) => {

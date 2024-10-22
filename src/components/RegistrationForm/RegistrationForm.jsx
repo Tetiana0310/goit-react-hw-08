@@ -2,8 +2,10 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./RegistrationForm.module.css";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
 
-const RegistrationForm = ({ onSubmit }) => {
+const RegistrationForm = () => {
   const validationSchema = Yup.object({
     name: Yup.string()
       .min(3, "Name must be at least 3 characters")
@@ -20,6 +22,12 @@ const RegistrationForm = ({ onSubmit }) => {
     name: "",
     email: "",
     password: "",
+  };
+
+  const dispatch = useDispatch();
+
+  const onSubmit = (values) => {
+    dispatch(register(values));
   };
 
   return (
