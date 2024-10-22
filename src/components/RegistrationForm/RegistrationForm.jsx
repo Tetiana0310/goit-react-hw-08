@@ -1,11 +1,13 @@
 import React from "react";
-import css from "./LoginForm.module.css";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import css from "./RegistrationForm.module.css";
 
-const LoginForm = ({ onSubmit }) => {
-  console.log("Rendering LoginForm");
+const RegistrationForm = ({ onSubmit }) => {
   const validationSchema = Yup.object({
+    name: Yup.string()
+      .min(3, "Name must be at least 3 characters")
+      .required("Name is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
@@ -15,6 +17,7 @@ const LoginForm = ({ onSubmit }) => {
   });
 
   const initialValues = {
+    name: "",
     email: "",
     password: "",
   };
@@ -29,7 +32,15 @@ const LoginForm = ({ onSubmit }) => {
       }}>
       {() => (
         <Form className={css.form}>
-          <div className={css.wrapper}>
+          <div className={css.fieldContainer}>
+            <label htmlFor="name" className={css.label}>
+              Name
+            </label>
+            <Field type="text" id="name" name="name" className={css.input} />
+            <ErrorMessage name="name" component="div" className={css.error} />
+          </div>
+
+          <div className={css.fieldContainer}>
             <label htmlFor="email" className={css.label}>
               Email
             </label>
@@ -55,7 +66,7 @@ const LoginForm = ({ onSubmit }) => {
           </div>
 
           <button type="submit" className={css.button}>
-            Log in
+            Register
           </button>
         </Form>
       )}
@@ -63,4 +74,4 @@ const LoginForm = ({ onSubmit }) => {
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;

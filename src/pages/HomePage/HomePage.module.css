@@ -1,0 +1,35 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+   
+}
+
+.LogIn {
+    background-color: #e0ffe0;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.LogIn h1 {
+    color: #4caf50;
+    font-size: 24px;
+    
+}
+
+.notLogIn {
+    background-color: #ffe0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+   
+}
+
+.notLogIn h1 {
+    color: #1e88e5;
+    font-size: 24px;}
+   
+
+
